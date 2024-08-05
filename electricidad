@@ -1,0 +1,30 @@
+def calcular_circuito():
+  """Calcula la tensión, la resistencia o la intensidad, según las variables proporcionadas."""
+
+  try:
+    opcion = input("¿Qué desea calcular? (tension/resistencia/intensidad): ")
+    opcion = opcion.lower()  # Convierte a minúsculas para comparar sin importar mayúsculas
+
+    if opcion == "tension":
+      intensidad = float(input("Ingrese la intensidad (en amperios): "))
+      resistencia = float(input("Ingrese la resistencia (en ohmios): "))
+      tension = intensidad * resistencia
+      print(f"La tensión es: {tension} voltios")
+    elif opcion == "resistencia":
+      tension = float(input("Ingrese la tensión (en voltios): "))
+      intensidad = float(input("Ingrese la intensidad (en amperios): "))
+      resistencia = tension / intensidad
+      print(f"La resistencia es: {resistencia} ohmios")
+    elif opcion == "intensidad":
+      tension = float(input("Ingrese la tensión (en voltios): "))
+      resistencia = float(input("Ingrese la resistencia (en ohmios): "))
+      intensidad = tension / resistencia
+      print(f"La intensidad es: {intensidad} amperios")
+    else:
+      print("Opción inválida. Por favor, ingrese 'tensión', 'resistencia' o 'intensidad'.")
+
+  except ValueError:
+    print("Por favor, ingrese valores numéricos válidos.")
+
+calcular_circuito()
+
